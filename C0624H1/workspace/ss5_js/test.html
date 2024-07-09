@@ -4,20 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bài 2</title>
 </head>
 
 <body>
-    <h1>hello</h1>
+    <div>
+        <label for="day">Kiểm tra ngày trong tuần: </label>
+        <input type="number" id="day" placeholder="Nhập số để kiểm tra ngày">
+        <button id="btn" onclick="check()">Check</button>
+        <p id="result"></p>
+    </div>
     <script>
-        var x = 83;
-        var y = 9;
-        x += 2;
-        ++x;
-        x++;
-        console.log(x);
-        x += 2;
-        console.log(x);
+        function check() {
+            let day = parseInt(document.getElementById('day').value);
+            let dayResult;
+            switch (day) {
+                case 1:
+                    dayResult = "Chủ nhật";
+                    break;
+                case 2:
+                    dayResult = "Thứ hai";
+                    break;
+                case 3:
+                    dayResult = "Thứ ba";
+                    break;
+                case 4:
+                    dayResult = "Thứ tư";
+                    break;
+                case 5:
+                    dayResult = "Thứ năm";
+                    break;
+                case 6:
+                    dayResult = "Thứ sáu";
+                    break;
+                case 7:
+                    dayResult = "Thứ bảy";
+                    break;
+                default:
+                    dayResult = "Không phải là ngày trong tuần";
+            }
+            document.getElementById('result').innerHTML = "Result: " + dayResult;
+        }
     </script>
 </body>
 
