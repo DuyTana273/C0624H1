@@ -42,27 +42,21 @@
 </head>
 
 <body>
+    <div>
+        <label for="year">Nhập số năm</label>
+        <input type="number" id="year">
+        <button onclick="isLeapYear()">Check</button>
+        <p id="result"></p>
+    </div>
     <script>
-        var year = parseInt(prompt("Enter a year"));
-        var isLeapYear = false;
-
-        var isDivisibleBy4 = year % 4 == 0;
-        if (isDivisibleBy4) {
-            var isDivisibleBy100 = year % 100 == 0;
-            if (isDivisibleBy100) {
-                var isDivisibleBy400 = year % 400 == 0;
-                if (isDivisibleBy400) {
-                    isLeapYear = true;
-                }
+        function isLeapYear() {
+            let resultJS = document.getElementById('result');
+            let yearJS = parseInt(document.getElementById('year').value);
+            if ((yearJS % 4 === 0 && yearJS % 100 !== 0) || yearJS % 400 === 0) {
+                resultJS.innerHTML = "Là năm nhuận";
             } else {
-                isLeapYear = true;
+                resultJS.innerHTML = "Không là năm nhuận";
             }
-        }
-
-        if (isLeapYear) {
-            alert(year + " is a leap year");
-        } else {
-            alert(year + " is NOT a leap year");
         }
     </script>
 </body>
